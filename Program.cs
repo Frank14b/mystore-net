@@ -31,7 +31,7 @@ int Connection = 30;
 
 // connectionString = "Server=" + Server + ";Initial Catalog=" + Catalog + ";User ID=" + User + ";Password=" + Password + ";Encrypt=" + Encrypt + ";TrustServerCertificate=" + TrustServerCertificate + ";MultipleActiveResultSets=" + MultipleActiveResultSets + ";Connection Timeout=" + Connection;
 
-connectionString = "Server=tcp:homemanag.database.windows.net,1433;Initial Catalog=mystore;Persist Security Info=False;User ID=Frank14b;Password=Dotrack@2022;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
+connectionString = "Server=tcp:homemanag.database.windows.net,1433;Initial Catalog=mystore;Persist Security Info=False;User ID=Frank14b;Password=Dotra;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
 // connectionString = "SERVER=" + Server + "; " +
 //             "DATABASE=mystore; " +
 //             "UID=" + User + "; " +
