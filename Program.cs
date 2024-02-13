@@ -7,7 +7,35 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddRazorPages();
 
-var connectionString = builder.Configuration["connectionString"];
+// homemanag@homemanag.iam.gserviceaccount.com
+
+string? connectionString = builder.Configuration["connectionString"];
+
+// string Server = "tcp:homemanag:us-central1:homemanag.database.windows.net,1433";
+// string Catalog = "mystore";
+// string User = "Frank14b";
+// string? Password = builder.Configuration["password"];
+// bool Encrypt = true;
+// bool TrustServerCertificate = false;
+// bool MultipleActiveResultSets = false;
+// int Connection = 30;
+
+string Server = "tcp:homemanag:us-central1:homemanag.database.windows.net,1433";
+string Catalog = "mystore";
+string User = "Frank14b";
+string? Password = builder.Configuration["password"];
+bool Encrypt = true;
+bool TrustServerCertificate = false;
+bool MultipleActiveResultSets = false;
+int Connection = 30;
+
+// connectionString = "Server=" + Server + ";Initial Catalog=" + Catalog + ";User ID=" + User + ";Password=" + Password + ";Encrypt=" + Encrypt + ";TrustServerCertificate=" + TrustServerCertificate + ";MultipleActiveResultSets=" + MultipleActiveResultSets + ";Connection Timeout=" + Connection;
+
+connectionString = "Server=tcp:homemanag.database.windows.net,1433;Initial Catalog=mystore;Persist Security Info=False;User ID=Frank14b;Password=Dotrack@2022;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
+// connectionString = "SERVER=" + Server + "; " +
+//             "DATABASE=mystore; " +
+//             "UID=" + User + "; " +
+//             "PWD=" + Password + ";";
 
 if (connectionString == null)
 {
@@ -15,9 +43,11 @@ if (connectionString == null)
     Environment.Exit(0);
 }
 
+Console.WriteLine(connectionString);
+
 builder.Services.AddDbContext<DataContext>(opt =>
 {
-    opt.UseSqlServer(connectionString);
+    opt.UseSqlServer(connectionString ?? "");
 });
 
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());

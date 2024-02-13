@@ -7,17 +7,20 @@ using Store.Entities;
 
 namespace dotnetStore.Pages;
 
-public class ProfilePage : PageModel {
+public class ProfilePage : PageModel
+{
 
     private readonly DataContext _context;
 
     public List<AppUser>? users;
 
-    public ProfilePage(DataContext context) {
+    public ProfilePage(DataContext context)
+    {
         _context = context;
     }
 
-    public async void OnGet(){
+    public async void OnGet()
+    {
         try
         {
             users = await _context.Users.ToListAsync();
@@ -28,7 +31,8 @@ public class ProfilePage : PageModel {
         }
     }
 
-    public void OnPost(){
+    public void OnPost()
+    {
         // RegisterDto data = (RegisterDto)Request.Form;
     }
 }
